@@ -1,4 +1,4 @@
-FROM jlesage/baseimage-gui:debian-12-v4.12
+FROM jlesage/baseimage-gui:debian-12-v4.11
 
 ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1 
 ENV TZ=Asia/Shanghai 
