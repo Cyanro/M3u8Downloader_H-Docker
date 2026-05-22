@@ -15,9 +15,9 @@
        - mkdir Caches
        - mkdir Config
        - mkdir Plugins
+       - mkdir PluginData
 
 ### Rest Api接口
- - 在传入接口时 savepath设置最好用./Downloads 如下
  - 如果你能自己解决权限问题,也可以自行修改此参数
  ```bash
  curl -X POST "http://192.168.123.3:65432/downloadbyurl" \
@@ -29,7 +29,6 @@
       "accept-encoding": "gzip, deflate, br",
       "accept-language": "zh-CN,zh;q=0.9"
     },
-    "savepath": "./Downloads"
   }'
  ```
 
@@ -52,6 +51,7 @@
            -v /下载位置:/app/Downloads \
            -v /配置文件:/app/Config \
            -v /插件目录:/app/Plugins \
+           -v /插件数据:/app/PluginData \
            --restart unless-stopped \
            harlanx/m3u8downloader_h:latest
 
