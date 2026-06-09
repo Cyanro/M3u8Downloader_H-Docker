@@ -4,7 +4,8 @@ ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 ENV TZ=Asia/Shanghai 
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
-
+ENV SECURE_CONNECTION=1
+ENV APP_MODE=Docker
 
 RUN set-cont-env APP_NAME "M3u8Downloader_H"
 RUN install_app_icon.sh "https://github.com/Harlan-H/M3u8Downloader_H-Docker/raw/master/Icon/logo.png"
