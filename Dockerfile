@@ -2,9 +2,9 @@ FROM jlesage/baseimage-gui:debian-12-v4.11
 
 ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1 
 ENV TZ=Asia/Shanghai 
-ENV LANG=C.UTF-8
-ENV LC_ALL=C.UTF-8
-ENV SECURE_CONNECTION=1
+ENV LANG=C.UTF-8 
+ENV LC_ALL=C.UTF-8 
+ENV SECURE_CONNECTION=1 
 ENV APP_MODE=Docker
 
 RUN set-cont-env APP_NAME "M3u8Downloader_H"
@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
     libice6 \
     libsm6 \
     libfontconfig1 \
-    fontconfig \ 
+    fontconfig \
     fonts-noto \
     libgtk-3-0 \
     libdbusmenu-gtk3-4 \
@@ -30,7 +30,8 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 COPY app/ /app/
 
-RUN chmod +x /app/M3u8Downloader_H
+RUN chmod +x /app/M3u8Downloader_H \
+    && chmod +x /app/ffmpeg
 
 RUN echo '#!/bin/sh' > /startapp.sh \
     && echo 'cd /app' >> /startapp.sh \
